@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Switcher</title>
+    <style>
+        h1, h3{
+            text-align: center;
+        }
+        .main{
+            text-align: center;
+        }
+        .button{
+            height: 150px;
+            width: 150px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: black;
+            display: inline-block;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #gray{
+            background-color: gray;
+        }
+        #red{
+            background-color: red;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #purple{
+            background-color: purple;
+        }
+        .Selected_info{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Switcher</h1>
+    <h3>Click on any one box and color will be set on entire body of a page</h3>
+    <div class="main">
+        <div class="button" id="yellow"></div>
+        <div class="button" id="gray"></div>
+        <div class="button" id="red"></div>
+        <div class="button" id="blue"></div>
+        <div class="button" id="purple"></div>
+    </div>
+    <h3 class="Selected_info" id="selected_info">You have not selected any color</h3>
+</body>
+<script>
+    const button=document.querySelectorAll('.button');
+    const body=document.querySelector('body');
+    const selectedInfo=document.querySelector('.Selected_info')
+    button.forEach(function(button){
+        button.addEventListener('click', function(event){
+            body.style.backgroundColor=event.target.id;
+            if(event.target.id=='yellow'){
+                selectedInfo.innerHTML=`You have selected color:${event.target.id}`;
+            };
+            if(event.target.id=='gray'){
+                selectedInfo.innerHTML=`You have selected color:${event.target.id}`;
+            };
+            if(event.target.id=='red'){
+                selectedInfo.innerHTML=`You have selected color:${event.target.id}`;
+            };
+            if(event.target.id=='blue'){
+                selectedInfo.innerHTML=`You have selected color:${event.target.id}`;
+            };
+            if(event.target.id=='purple'){
+                selectedInfo.innerHTML=`You have selected color:${event.target.id}`;
+            };
+            
+            
+            
+        });
+    });
+</script>
+</html>
